@@ -1,0 +1,17 @@
+<div class="chat-container" #chatContainer>
+  <p-toast></p-toast>
+  
+  <div class="messages">
+    <app-message
+      *ngFor="let message of messages"
+      [message]="message">
+    </app-message>
+  </div>
+
+  <div class="input-container">
+    <app-message-input
+      (sendMessage)="sendMessage($event)"
+      [loading]="loading">
+    </app-message-input>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+🔁 1. useState
+Gerencia estado local em componentes funcionais.
+
+jsx
+Copiar
+Editar
+import React, { useState } from "react";
+
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    <div>
+      <p>Contador: {contador}</p>
+      <button onClick={() => setContador(contador + 1)}>Incrementar</button>
+    </div>
+  );
+}
+🔄 2. useEffect
+Executa efeitos colaterais (ex: API, timers, DOM) após renderizações.
+
+jsx
+Copiar
+Editar
+import React, { useEffect } from "react";
+
+function Timer() {
+  useEffect(() => {
+    console.log("Componente montado");
+    return () => console.log("Componente desmontado");
+  }, []);
+
+  return <p>Veja o console.</p>;
+}
+🧠 3. useContext
+Acessa dados de um contexto global sem prop drilling.
+
+jsx
+Copiar
+Editar
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+
+function Botao() {
+  const tema = useContext(ThemeContext);
+  return <button style={{ background: tema.background }}>Clique</button>;
+}
+📦 4. useRef
+Cria uma referência mutável que persiste entre renderizações (útil para acessar DOM).
+
+jsx
+Copiar
+Editar
+import React, { useRef } from "react";
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={() => inputRef.current.focus()}>Focar</button>
+    </>
+  );
+}
+♻️ 5. useMemo
+Memoriza um valor calculado para evitar recomputações desnecessárias.
+
+jsx
+Copiar
+Editar
+import React, { useMemo, useState } from "react";
+
+function Fatorial({ num }) {
+  const resultado = useMemo(() => {
+    console.log("Calculando fatorial...");
+    let r = 1;
+    for (let i = 2; i <= num; i++) r *= i;
+    return r;
+  }, [num]);
+
+  return <p>Fatorial de {num}: {resultado}</p>;
+}
+🧮 6. useCallback
+Memoriza uma função para evitar recriação desnecessária entre renders.
+
+jsx
+Copiar
+Editar
+import React, { useCallback, useState } from "react";
+
+function Botao() {
+  const [cont, setCont] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCont((c) => c + 1);
+  }, []);
+
+  return <button onClick={handleClick}>Contar: {cont}</button>;
+}
+🧩 Extras (avançados ou menos comuns)
+Hook	Descrição
+useReducer	Alternativa ao useState para lógica mais complexa (tipo Redux).
+useLayoutEffect	Igual ao useEffect, mas dispara antes da pintura do layout.
+useImperativeHandle	Controla o que é exposto via ref em componentes customizados.
+useDebugValue	Para mostrar informações no React DevTools.
+useId (React 18+)	Gera IDs únicos para acessibilidade/server rendering.

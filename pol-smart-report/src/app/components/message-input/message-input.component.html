@@ -1,0 +1,22 @@
+<div class="input-wrapper">
+  <span class="char-counter" [ngClass]="{'warning': remainingChars < 20}">
+    {{ remainingChars }}
+  </span>
+  
+  <textarea
+    pInputTextarea
+    [(ngModel)]="message"
+    [maxlength]="maxLength"
+    placeholder="Digite sua pergunta..."
+    [rows]="2"
+    [autoResize]="true"
+    (keydown.enter)="$event.preventDefault(); onSubmit()">
+  </textarea>
+  
+  <p-button
+    icon="pi pi-send"
+    (onClick)="onSubmit()"
+    [loading]="loading"
+    [disabled]="!message.trim() || message.length > maxLength">
+  </p-button>
+</div>

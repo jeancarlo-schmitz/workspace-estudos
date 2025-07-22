@@ -1,0 +1,23 @@
+.input-wrapper {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  
+  textarea {
+    flex: 1;
+    resize: none;
+  }
+  
+  .char-counter {
+    position: absolute;
+    right: 4rem;
+    bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-color-secondary);
+    
+    &.warning {
+      color: var(--orange-500);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.message {
+  max-width: 80%;
+  margin: 0.5rem 0;
+  
+  &.user-message {
+    align-self: flex-end;
+    
+    ::ng-deep .p-card {
+      background-color: var(--primary-color);
+      color: var(--primary-color-text);
+    }
+  }
+  
+  &.ai-message {
+    align-self: flex-start;
+  }
+  
+  .message-content {
+    .message-text {
+      margin-bottom: 0.5rem;
+      white-space: pre-wrap;
+    }
+    
+    .file-attachment {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem;
+      background-color: var(--surface-ground);
+      border-radius: 4px;
+      margin: 0.5rem 0;
+      
+      .file-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    
+    .message-timestamp {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+  }
+}

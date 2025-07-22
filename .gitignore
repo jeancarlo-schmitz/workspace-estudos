@@ -1,0 +1,29 @@
+# Ignorar node_modules em qualquer lugar
+**/node_modules/
+
+# Ignorar .vscode em qualquer lugar
+**/.vscode/
+
+# Ignorar dist, build, coverage, etc.
+**/dist/
+**/build/
+**/coverage/
+
+# Ignorar arquivos de ambiente e log
+**/.env
+**/.env.*
+**/npm-debug.log
+**/yarn-error.log
+**/pnpm-debug.log
+
+# Ignorar arquivos temporários e de sistema
+**/.DS_Store
+**/Thumbs.db
+
+# Ignorar arquivos do sistema operacional
+**/desktop.ini
+
+# Ignorar IDEs (além do .vscode)
+**/.idea/
+**/.sass-cache/
+**/.cache/
