@@ -1,0 +1,27 @@
+<div class="message" [ngClass]="{'user-message': message.isUser, 'ai-message': !message.isUser}">
+    <div class="message-content">
+      <div class="message-header">
+        <p class="message-title"
+          [ngClass]="{'user-title': message.isUser, 'ai-title': !message.isUser}">
+          {{message.isUser ? 'Você' : 'POL Smart Report'}}
+        </p>
+        <div class="message-timestamp">
+          {{ message.timestamp | date:'HH:mm' }}
+        </div>
+      </div>
+      <div class="message-text">{{ message.text }}</div>
+
+      <div *ngIf="message.file" class="file-attachment">
+        <div class="file-info">
+          <i class="pi" [ngClass]="{'pi-file-pdf': message.file.type === 'pdf',
+                                  'pi-file': message.file.type === 'other'}"></i>
+          <span>{{ message.file.name }}</span>
+        </div>
+        <p-button
+          icon="pi pi-download"
+          (onClick)="downloadFile(message.file.url, message.file.name)"
+          styleClass="p-button-text">
+        </p-button>
+      </div>
+    </div>
+</div>

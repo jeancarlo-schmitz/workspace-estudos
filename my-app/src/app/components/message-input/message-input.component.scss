@@ -1,0 +1,38 @@
+::ng-deep .input-wrapper {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  align-items: flex-start;
+  flex: 1;
+  align-items: center;
+
+  textarea {
+    flex: 1;
+    resize: none;
+    border: 1px solid #cdcdcd;
+    padding: 5px;
+  }
+
+  .p-button.p-button-icon-only{
+    width: 2rem;
+  }
+}
+
+.input-content{
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+
+  .char-counter {
+    right: 4rem;
+    bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-color-secondary);
+    display: flex;
+    justify-content: flex-end;
+
+    &.warning {
+      color: var(--orange-500);
+    }
+  }
+}

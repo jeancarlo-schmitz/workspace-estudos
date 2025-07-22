@@ -1,0 +1,20 @@
+<div class="recent-files">
+  <h3>Arquivos Recentes</h3>
+  
+  <div class="files-list">
+    <p-card *ngFor="let file of recentFiles" styleClass="file-card">
+      <div class="file-item">
+        <div class="file-info">
+          <i class="pi" [ngClass]="{'pi-file-pdf': file.type === 'pdf',
+                                  'pi-file': file.type === 'other'}"></i>
+          <span class="file-name">{{ file.name }}</span>
+        </div>
+        <p-button
+          icon="pi pi-download"
+          (onClick)="downloadFile(file.url, file.name)"
+          styleClass="p-button-text">
+        </p-button>
+      </div>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--surface-ground);
+  color: var(--text-color);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remover itálico de address e outros */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Remover estilos padrão de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remover decoração de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Botões e inputs limpos */
+button, input, textarea, select {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}

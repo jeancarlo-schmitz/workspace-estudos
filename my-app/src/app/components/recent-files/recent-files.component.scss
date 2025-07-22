@@ -1,0 +1,46 @@
+.recent-files::ng-deep {
+  padding: 1rem;
+  background-color: var(--surface-card);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+  }
+
+  .files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .file-card {
+      ::ng-deep .p-card-body {
+        padding: 0.5rem;
+      }
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .file-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        i {
+          font-size: 1.2rem;
+        }
+
+        .file-name {
+          max-width: 150px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
